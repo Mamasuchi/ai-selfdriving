@@ -49,14 +49,20 @@ class Car{
     }
 
     draw(animation){
+        animation.save();
+        animation.translate(this.x,this.y);
+        animation.rotate(-this.angle);
+
         animation.beginPath();
         animation.rect(
-            this.x-this.width/2,
-            this.y-this.height/2,
+            -this.width/2,
+            -this.height/2,
             this.width,
             this.height
         );
         animation.fill();
+
+        animation.restore();
     }
     
 }
